@@ -1,3 +1,68 @@
+# Obsidian Chem
+
+Obisidian Chem 为Obisidian 提供结构式绘制、渲染等功能，使您能够在笔记中添加化学式、结构式
+
+## Features
+
+### 2D Sketcher
+- [ ] [Ketcher](https://lifescience.opensource.epam.com/ketcher) Integration (Standalone version)
+- [ ] 在笔记中渲染SMILES字符串/InCHI字符串为Chem Canvas, with 内置结构编辑窗口
+- [ ] 提供选项，是否展示化合物信息(Analysis Window)
+- [ ] 在笔记中插入化学结构链接，with 独立结构编辑窗口/Chemdraw联用器，以附件形式插入
+- [ ] 在Canvas中插入化学对象
+- [ ] ChemDraw Clipboard Support
+- [ ] Import/Export \*.mol files, \*.gjf files etc.
+- [ ] Export graphs/string/name etc.
+- [ ] OCR, 调用已有ChemOCR 库，或使用联网的Ketcher
+- [ ] 【长期】重写编辑器，提供类似ChemDraw的使用体验，需要处理翻译器、渲染器、交互、样式设计等复杂问题，预计用 Cpp+Qt 实现初版，打包后移植上nodejs
+- [ ] 【Optional】InChI Integration
+
+### 3D Sketcher, Crystals, Bio & supermolecule
+Unplanned
+
+### Chemical Formula Supoort
+- [ ] 字符串处理库，cpp or ts
+- [ ] Obsidian渲染，使用Markdown内建LaTex 或 HTML 编辑
+- [ ] 在线渲染方案，以 Plain String 存储
+- [ ] 输入转换方案，以 Formatted String 存储
+- [ ] 中英文俗名-化学式对应库，允许用户编辑，整合自动填充
+- [ ] 复制导出格式：Word、HTML、图片等
+- [ ] 化学方程式支持及自动配平校正，提供标准的等号、箭头、物态标注方案，需要强大的数学库，热力学、动力学数据标记支持
+- [ ] 整合结构式的化学方程式
+- [ ] 核方程式
+
+### Chemical Support
+- [ ] 结构式、化学式、CAS、商城直通，基本数据、理化性质、MSDS数据做表
+- [ ] 内建Markdown表格或DB，提供导出方案（ChemDraw for Excel）
+
+### Spectrum Support
+- [ ] 化学常用谱图
+
+### ChemGraphs
+- [ ] 仪器装置图
+- [ ] 反应流程图
+
+## Development
+
+### 技术选型
+- 框架：React, Vue, Svelte
+- 语言：Typescript
+- Core：Ketcher & Indigo
+
+### 兼容性
+- InChI & SMILES support by Ketcher
+- MOL files and other coordinate files
+
+
+### 项目任务：
+- [ ] 帮助文档
+- [ ] License
+- [ ] 发布
+
+## Memo
+2022-12-26: 该插件正在构想阶段，在半年内无法提供可用包
+
+---
 # Obsidian Sample Plugin
 
 This is a sample plugin for Obsidian (https://obsidian.md).
