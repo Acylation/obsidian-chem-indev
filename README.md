@@ -59,6 +59,9 @@ Unplanned
 - [ ] 发布
 - [ ] Github 工作流
 - [ ] Roadmap in Github Project
+- [ ] 移动端兼容
+- [ ] i18n
+- [ ] a11y
 
 ## Memo
 2022-12-26: 该插件正在构想阶段，在半年内无法提供可用包
