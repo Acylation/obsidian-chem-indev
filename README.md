@@ -18,7 +18,8 @@ Obisidian Chem 为Obisidian 提供结构式绘制、渲染等功能，使您能�
 - [ ] 【Optional】InChI Integration
 
 ### 3D Sketcher, Crystals, Bio & supermolecule
-Unplanned
+- [ ] [miew](https://github.com/epam/miew)
+- [ ] Diamond embedded
 
 ### Chemical Formula Supoort
 - [ ] 字符串处理库，cpp or ts
