@@ -16,6 +16,7 @@ Obisidian Chem 为Obisidian 提供结构式绘制、渲染等功能，使您能�
 - [ ] OCR, 调用已有ChemOCR 库，或使用联网的Ketcher
 - [ ] 【长期】重写编辑器，提供类似ChemDraw的使用体验，需要处理翻译器、渲染器、交互、样式设计等复杂问题，预计用 Cpp+Qt 实现初版，打包后移植上nodejs
 - [ ] 【Optional】InChI Integration
+- [ ] Ketcher Canvas Support, saved and rendered as svg
 
 ### 3D Sketcher, Crystals, Bio & supermolecule
 - [ ] [miew](https://github.com/epam/miew)
