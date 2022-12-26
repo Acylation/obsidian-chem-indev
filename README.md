@@ -53,11 +53,12 @@ Unplanned
 - InChI & SMILES support by Ketcher
 - MOL files and other coordinate files
 
-
 ### 项目任务：
 - [ ] 帮助文档
 - [ ] License
 - [ ] 发布
+- [ ] Github 工作流
+- [ ] Roadmap in Github Project
 
 ## Memo
 2022-12-26: 该插件正在构想阶段，在半年内无法提供可用包
