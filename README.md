@@ -6,7 +6,7 @@ Obisidian Chem 为Obisidian 提供结构式绘制、渲染等功能，使您能�
 
 ### 2D Sketcher
 - [ ] [Ketcher](https://lifescience.opensource.epam.com/ketcher) Integration (Standalone version)
-- [ ] 在笔记中渲染SMILES字符串/InCHI字符串为Chem Canvas, with 内置结构编辑窗口
+- [ ] 在笔记中渲染SMILES字符串/InCHI字符串为Chem Canvas, with 内置结构编辑窗口，参考[obsidian-admonition](https://github.com/valentine195/obsidian-admonition)
 - [ ] 提供选项，是否展示化合物信息(Analysis Window)
 - [ ] 在笔记中插入化学结构链接，with 独立结构编辑窗口/Chemdraw联用器，以附件形式插入
 - [ ] 在Canvas中插入化学对象
