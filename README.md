@@ -47,13 +47,15 @@ Obisidian Chem 为Obisidian 提供结构式绘制、渲染等功能，使您能�
 ## Development
 
 ### 技术选型
-- 框架：React, Vue, Svelte
+- 框架：React
 - 语言：Typescript
-- Core：Ketcher & Indigo
+- Core：RDKit, CDK, Ketcher & Indigo
 
 ### 兼容性
 - InChI & SMILES support by Ketcher
 - MOL files and other coordinate files
+- RDKit
+- Open Babel
 
 ### 项目任务：
 - [ ] 帮助文档
@@ -64,6 +66,10 @@ Obisidian Chem 为Obisidian 提供结构式绘制、渲染等功能，使您能�
 - [ ] 移动端兼容
 - [ ] i18n
 - [ ] a11y
+
+## 设计理念
+- 数据存储可移植，能够方便地移植到非Obsidian场景，保留数据但不渲染
+- 渲染方法按照 Obisidian & Markdown 原生语法优化
 
 ## Memo
 2022-12-26: 该插件正在构想阶段，在半年内无法提供可用包
