@@ -60,8 +60,8 @@ Obisidian Chem 为Obisidian 提供结构式绘制、渲染等功能，使您能�
 
 ### 项目任务：
 - [ ] 帮助文档
-- [ ] License
-- [ ] 发布
+- [x] License: GPLv2 with openbabel depenency
+- [ ] 发布版本，迁移仓库，并重新上传
 - [ ] Github 工作流
 - [ ] Roadmap in Github Project
 - [ ] 移动端兼容
