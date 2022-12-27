@@ -1,6 +1,6 @@
 {
 	"name": "obsidian-chem",
-	"version": "Developer",
+	"version": "0.1.0",
 	"description": "Chem support for Obsidian",
 	"main": "main.js",
 	"scripts": {
