@@ -5,6 +5,7 @@ Obisidian Chem 为Obisidian 提供结构式绘制、渲染等功能，使您能�
 ## Features
 
 ### 2D Sketcher
+
 - [ ] [Ketcher](https://lifescience.opensource.epam.com/ketcher) Integration (Standalone version)
 - [ ] 在笔记中渲染SMILES字符串/InCHI字符串为Chem Canvas, with 内置结构编辑窗口，参考[obsidian-admonition](https://github.com/valentine195/obsidian-admonition)
 - [ ] OpenSmiles标准支持http://opensmiles.org/
@@ -20,10 +21,12 @@ Obisidian Chem 为Obisidian 提供结构式绘制、渲染等功能，使您能�
 - [ ] Ketcher Canvas Support, saved and rendered as svg
 
 ### 3D Sketcher, Crystals, Bio & supermolecule
+
 - [ ] [miew](https://github.com/epam/miew)
 - [ ] Diamond embedded
 
 ### Chemical Formula Supoort
+
 - [ ] 字符串处理库，cpp or ts
 - [ ] Obsidian渲染，使用Markdown内建LaTex 或 HTML 编辑
 - [ ] 在线渲染方案，以 Plain String 存储
@@ -35,30 +38,36 @@ Obisidian Chem 为Obisidian 提供结构式绘制、渲染等功能，使您能�
 - [ ] 核方程式
 
 ### Chemical Support
+
 - [ ] 结构式、化学式、CAS、商城直通，基本数据、理化性质、MSDS数据做表
 - [ ] 内建Markdown表格或DB，提供导出方案（ChemDraw for Excel）
 
 ### Spectrum Support
+
 - [ ] 化学常用谱图
 
 ### ChemGraphs
+
 - [ ] 仪器装置图
 - [ ] 反应流程图
 
 ## Development
 
 ### 技术选型
+
 - 框架：React
 - 语言：Typescript
 - Core：RDKit, CDK, Ketcher & Indigo
 
 ### 兼容性
+
 - InChI & SMILES support by Ketcher
 - MOL files and other coordinate files
 - RDKit
 - Open Babel
 
-### 项目任务：
+### 项目任务
+
 - [ ] 帮助文档
 - [x] License: GPLv2 with openbabel depenency
 - [ ] 发布版本，迁移仓库，并重新上传
@@ -69,16 +78,21 @@ Obisidian Chem 为Obisidian 提供结构式绘制、渲染等功能，使您能�
 - [ ] a11y
 
 ## 设计理念
+
 - 数据存储可移植，能够方便地移植到非Obsidian场景，保留数据但不渲染
 - 渲染方法按照 Obisidian & Markdown 原生语法优化
 
 ## Memo
-2022-12-26: 该插件正在构想阶段，在半年内无法提供可用包
+
+2022-12-26: 该插件正在构想阶段
+2022-12-27: 行内渲染 powered by smiles-drawer
 
 ---
+
+```markdown
 # Obsidian Sample Plugin
 
-This is a sample plugin for Obsidian (https://obsidian.md).
+This is a sample plugin for Obsidian (<https://obsidian.md>).
 
 This project uses Typescript to provide type checking and documentation.
 The repo depends on the latest plugin API (obsidian.d.ts) in Typescript Definition format, which contains TSDoc comments describing what it does.
@@ -86,6 +100,7 @@ The repo depends on the latest plugin API (obsidian.d.ts) in Typescript Definiti
 **Note:** The Obsidian API is still in early alpha and is subject to change at any time!
 
 This sample plugin demonstrates some of the basic functionality the plugin API can do.
+
 - Changes the default font color to red using `styles.css`.
 - Adds a ribbon icon, which shows a Notice when clicked.
 - Adds a command "Open Sample Modal" which opens a Modal.
@@ -111,7 +126,7 @@ Quick starting guide for new plugin devs:
 
 - Update your `manifest.json` with your new version number, such as `1.0.1`, and the minimum Obsidian version required for your latest release.
 - Update your `versions.json` file with `"new-plugin-version": "minimum-obsidian-version"` so older versions of Obsidian can download an older version of your plugin that's compatible.
-- Create new GitHub release using your new version number as the "Tag version". Use the exact version number, don't include a prefix `v`. See here for an example: https://github.com/obsidianmd/obsidian-sample-plugin/releases
+- Create new GitHub release using your new version number as the "Tag version". Use the exact version number, don't include a prefix `v`. See here for an example: <https://github.com/obsidianmd/obsidian-sample-plugin/releases>
 - Upload the files `manifest.json`, `main.js`, `styles.css` as binary attachments. Note: The manifest.json file must be in two places, first the root path of your repository and also in the release.
 - Publish the release.
 
@@ -120,10 +135,10 @@ Quick starting guide for new plugin devs:
 
 ## Adding your plugin to the community plugin list
 
-- Check https://github.com/obsidianmd/obsidian-releases/blob/master/plugin-review.md
+- Check <https://github.com/obsidianmd/obsidian-releases/blob/master/plugin-review.md>
 - Publish an initial version.
 - Make sure you have a `README.md` file in the root of your repo.
-- Make a pull request at https://github.com/obsidianmd/obsidian-releases to add your plugin.
+- Make a pull request at <https://github.com/obsidianmd/obsidian-releases> to add your plugin.
 
 ## How to use
 
@@ -136,7 +151,8 @@ Quick starting guide for new plugin devs:
 - Copy over `main.js`, `styles.css`, `manifest.json` to your vault `VaultFolder/.obsidian/plugins/your-plugin-id/`.
 
 ## Improve code quality with eslint (optional)
-- [ESLint](https://eslint.org/) is a tool that analyzes your code to quickly find problems. You can run ESLint against your plugin to find common bugs and ways to improve your code. 
+
+- [ESLint](https://eslint.org/) is a tool that analyzes your code to quickly find problems. You can run ESLint against your plugin to find common bugs and ways to improve your code.
 - To use eslint with this project, make sure to install eslint from terminal:
   - `npm install -g eslint`
 - To use eslint to analyze this project use this command:
@@ -147,4 +163,5 @@ Quick starting guide for new plugin devs:
 
 ## API Documentation
 
-See https://github.com/obsidianmd/obsidian-api
+See <https://github.com/obsidianmd/obsidian-api>
+```
