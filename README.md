@@ -87,9 +87,6 @@ Obisidian Chem 为Obisidian 提供结构式绘制、渲染等功能，使您能�
 2022-12-26: 该插件正在构想阶段
 2022-12-27: 行内渲染 powered by smiles-drawer
 
----
-
-```markdown
 # Obsidian Sample Plugin
 
 This is a sample plugin for Obsidian (<https://obsidian.md>).
@@ -164,4 +161,3 @@ Quick starting guide for new plugin devs:
 ## API Documentation
 
 See <https://github.com/obsidianmd/obsidian-api>
-```
