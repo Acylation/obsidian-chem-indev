@@ -8,6 +8,7 @@ Obisidian Chem 为Obisidian 提供结构式绘制、渲染等功能，使您能�
 
 - [ ] [Ketcher](https://lifescience.opensource.epam.com/ketcher) Integration (Standalone version)
 - [ ] 在笔记中渲染SMILES字符串/InCHI字符串为Chem Canvas, with 内置结构编辑窗口，参考[obsidian-admonition](https://github.com/valentine195/obsidian-admonition)
+- [ ] OpenSmiles标准支持http://opensmiles.org/
 - [ ] 提供选项，是否展示化合物信息(Analysis Window)
 - [ ] 在笔记中插入化学结构链接，with 独立结构编辑窗口/Chemdraw联用器，以附件形式插入
 - [ ] 在Canvas中插入化学对象
@@ -68,8 +69,8 @@ Obisidian Chem 为Obisidian 提供结构式绘制、渲染等功能，使您能�
 ### 项目任务
 
 - [ ] 帮助文档
-- [ ] License
-- [ ] 发布
+- [x] License: GPLv2 with openbabel depenency
+- [ ] 发布版本，迁移仓库，并重新上传
 - [ ] Github 工作流
 - [ ] Roadmap in Github Project
 - [ ] 移动端兼容
@@ -83,9 +84,8 @@ Obisidian Chem 为Obisidian 提供结构式绘制、渲染等功能，使您能�
 
 ## Memo
 
-2022-12-26: 该插件正在构想阶段，在半年内无法提供可用包
-
----
+2022-12-26: 该插件正在构想阶段
+2022-12-27: 行内渲染 powered by smiles-drawer
 
 # Obsidian Sample Plugin
 
