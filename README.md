@@ -3,6 +3,7 @@
 ![Obsidian Downloads](https://img.shields.io/badge/dynamic/json?logo=obsidian&color=%23483699&label=downloads&query=%24%5B%22obsidian-chem%22%5D.downloads&url=https%3A%2F%2Fraw.githubusercontent.com%2Fobsidianmd%2Fobsidian-releases%2Fmaster%2Fcommunity-plugin-stats.json)
 
 Obisidian Chem 为Obisidian 提供结构式绘制、渲染等功能，使您能够在笔记中添加化学式、结构式
+项目语言&多语言问题，支持中英文提交issue（后期国际维护者多了再切换Guidance），建议双语，添加到Contributing、Welcoming/Issue工单中，原生自带汉化？
 
 ## Features
 
