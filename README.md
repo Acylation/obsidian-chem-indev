@@ -5,6 +5,18 @@
 Obisidian Chem 为Obisidian 提供结构式绘制、渲染等功能，使您能够在笔记中添加化学式、结构式
 项目语言&多语言问题，支持中英文提交issue（后期国际维护者多了再切换Guidance），建议双语，添加到Contributing、Welcoming/Issue工单中，原生自带汉化？
 
+## 开发状态/Status
+
+2022-12-26: 该插件正在构想阶段
+2022-12-27: 行内渲染 powered by smiles-drawer
+2022-12-31: 完成技术选型，暂时搁置
+2023-02-21: 项目重启
+
+## 设计理念
+
+- 数据存储可移植，能够方便地移植到非Obsidian场景，保留数据但不渲染
+- 渲染方法按照 Obisidian & Markdown 原生语法优化
+
 ## Features
 
 ### 2D Sketcher
@@ -79,16 +91,6 @@ Obisidian Chem 为Obisidian 提供结构式绘制、渲染等功能，使您能�
 - [ ] 移动端兼容
 - [ ] i18n
 - [ ] a11y
-
-## 设计理念
-
-- 数据存储可移植，能够方便地移植到非Obsidian场景，保留数据但不渲染
-- 渲染方法按照 Obisidian & Markdown 原生语法优化
-
-## Memo
-
-2022-12-26: 该插件正在构想阶段
-2022-12-27: 行内渲染 powered by smiles-drawer
 
 # Obsidian Sample Plugin
 
