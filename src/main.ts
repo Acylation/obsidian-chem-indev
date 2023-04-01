@@ -1,4 +1,11 @@
-import { App, Plugin, PluginSettingTab, Setting } from "obsidian";
+import {
+	App,
+	Plugin,
+	PluginSettingTab,
+	Setting,
+	WorkspaceLeaf,
+} from "obsidian";
+import { ExampleView, VIEW_TYPE_EXAMPLE } from "./components/view";
 
 interface ChemPluginSettings {
 	mySetting: string;
@@ -16,7 +23,9 @@ export default class ChemPlugin extends Plugin {
 		this.addRibbonIcon(
 			"hexagon",
 			"This is Chem Plugin, todo: Open Chem-Canvas",
-			() => {} //加鼠标click回调函数
+			() => {
+				this.activateView();
+			} //加鼠标click回调函数
 		);
 
 		// This adds a settings tab so the user can configure various aspects of the plugin
@@ -27,6 +36,11 @@ export default class ChemPlugin extends Plugin {
 		this.registerDomEvent(document, "click", (evt: MouseEvent) => {
 			console.log("click", evt);
 		});
+
+		this.registerView(
+			VIEW_TYPE_EXAMPLE,
+			(leaf: WorkspaceLeaf) => new ExampleView(leaf)
+		);
 
 		this.registerMarkdownCodeBlockProcessor("smiles", (source, el, ctx) => {
 			const rows = source.split("\n").filter((row) => row.length > 0);
@@ -62,6 +76,37 @@ export default class ChemPlugin extends Plugin {
 
 	async saveSettings() {
 		await this.saveData(this.settings);
+	}
+
+	/**
+	 * activateView opens the main Projects view in a new workspace leaf.
+	 * Clarify: from marcusolsson/obsidian-projects
+	 * */
+	async activateView(): Promise<void> {
+		const leaf = await this.getOrCreateLeaf();
+
+		leaf.setViewState({
+			type: VIEW_TYPE_EXAMPLE,
+			state: {},
+		});
+
+		this.app.workspace.revealLeaf(leaf);
+	}
+
+	/**
+	 * getOrCreateLeaf returns a new leaf, or returns an existing leaf if
+	 * Projects is already open.
+	 * Clarify: from marcusolsson/obsidian-projects
+	 */
+	async getOrCreateLeaf(): Promise<WorkspaceLeaf> {
+		const existingLeaves =
+			this.app.workspace.getLeavesOfType(VIEW_TYPE_EXAMPLE);
+
+		if (existingLeaves[0]) {
+			return existingLeaves[0];
+		}
+
+		return this.app.workspace.getLeaf(true);
 	}
 }
 

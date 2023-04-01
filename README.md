@@ -93,6 +93,12 @@ Obisidian Chem 为Obisidian 提供结构式绘制、渲染等功能，使您能�
 - [ ] i18n
 - [ ] a11y
 
+### 项目致谢
+
+- [ ] obsidian-projects
+- [ ] obsidian-admonition
+- [ ] smiles-drawer
+
 # Obsidian Sample Plugin
 
 This is a sample plugin for Obsidian (<https://obsidian.md>).
