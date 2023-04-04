@@ -6,6 +6,7 @@ import {
 	WorkspaceLeaf,
 } from "obsidian";
 import { ChemView, VIEW_TYPE_CHEM } from "./components/view";
+import SmilesDrawer from "smiles-drawer";
 
 interface ChemPluginSettings {
 	mySetting: string;
@@ -45,6 +46,14 @@ export default class ChemPlugin extends Plugin {
 		);
 
 		this.registerMarkdownCodeBlockProcessor("smiles", (source, el, ctx) => {
+			//source: 需要解析的string
+			//el: 返回的HTMLElement
+			//ctx: 上下文，optional，含有文件名信息啥的
+			//collapse 属性，styling panel，2D editor
+
+		});
+
+		this.registerMarkdownCodeBlockProcessor("smilesa", (source, el, ctx) => {
 			const rows = source.split("\n").filter((row) => row.length > 0);
 
 			const table = el.createEl("table");
