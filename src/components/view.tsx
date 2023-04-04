@@ -3,29 +3,32 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { ReactView } from "./ReactView"
 import { createRoot } from "react-dom/client";
+import { AppContext } from "./context";
 
-export const VIEW_TYPE_EXAMPLE = "example-view";
+export const VIEW_TYPE_CHEM = "chem-view";
 
-export class ExampleView extends ItemView {
+export class ChemView extends ItemView {
     constructor(leaf: WorkspaceLeaf) {
         super(leaf);
     }
 
     getViewType() {
-        return VIEW_TYPE_EXAMPLE;
+        return VIEW_TYPE_CHEM;
     }
 
     getDisplayText() {
-        return "Example view";
+        return "Chem view";
     }
 
     async onOpen() {
         const root = createRoot(this.containerEl.children[1]);
         root.render(
             <React.StrictMode>
-                <ReactView />
+                <AppContext.Provider value={this.app}>
+                    <ReactView />
+                </AppContext.Provider>
             </React.StrictMode>
-        );
+        ); 
     }
 
     async onClose() {

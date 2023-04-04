@@ -5,7 +5,7 @@ import {
 	Setting,
 	WorkspaceLeaf,
 } from "obsidian";
-import { ExampleView, VIEW_TYPE_EXAMPLE } from "./components/view";
+import { ChemView, VIEW_TYPE_CHEM } from "./components/view";
 
 interface ChemPluginSettings {
 	mySetting: string;
@@ -16,7 +16,9 @@ const DEFAULT_SETTINGS: ChemPluginSettings = {
 };
 
 export default class ChemPlugin extends Plugin {
+
 	settings: ChemPluginSettings;
+	
 	async onload() {
 		await this.loadSettings();
 
@@ -25,7 +27,7 @@ export default class ChemPlugin extends Plugin {
 			"This is Chem Plugin, todo: Open Chem-Canvas",
 			() => {
 				this.activateView();
-			} //加鼠标click回调函数
+			}
 		);
 
 		// This adds a settings tab so the user can configure various aspects of the plugin
@@ -38,8 +40,8 @@ export default class ChemPlugin extends Plugin {
 		});
 
 		this.registerView(
-			VIEW_TYPE_EXAMPLE,
-			(leaf: WorkspaceLeaf) => new ExampleView(leaf)
+			VIEW_TYPE_CHEM,
+			(leaf: WorkspaceLeaf) => new ChemView(leaf)
 		);
 
 		this.registerMarkdownCodeBlockProcessor("smiles", (source, el, ctx) => {
@@ -58,12 +60,10 @@ export default class ChemPlugin extends Plugin {
 				}
 			}
 		});
-
-		console.log("chemplugin loaded");
 	}
 
 	onunload() {
-		console.log("chemplugin unloading");
+		this.app.workspace.detachLeavesOfType(VIEW_TYPE_CHEM);
 	}
 
 	async loadSettings() {
@@ -86,7 +86,7 @@ export default class ChemPlugin extends Plugin {
 		const leaf = await this.getOrCreateLeaf();
 
 		leaf.setViewState({
-			type: VIEW_TYPE_EXAMPLE,
+			type: VIEW_TYPE_CHEM,
 			state: {},
 		});
 
@@ -100,7 +100,7 @@ export default class ChemPlugin extends Plugin {
 	 */
 	async getOrCreateLeaf(): Promise<WorkspaceLeaf> {
 		const existingLeaves =
-			this.app.workspace.getLeavesOfType(VIEW_TYPE_EXAMPLE);
+			this.app.workspace.getLeavesOfType(VIEW_TYPE_CHEM);
 
 		if (existingLeaves[0]) {
 			return existingLeaves[0];
