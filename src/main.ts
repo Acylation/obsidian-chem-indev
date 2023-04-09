@@ -47,16 +47,15 @@ export default class ChemPlugin extends Plugin {
 		this.registerMarkdownCodeBlockProcessor("smiles", (source, el, ctx) => {
 			let drawer = new SmilesDrawer.SmiDrawer(); //Drawer(options) 导包成功，开始学习调用
 
-			const rows = source.split("\n").filter((row) => row.length > 0);//view mode 会读取到行末的\n
+			const rows = source.split("\n").filter((row) => row.length > 0); //view mode 会读取到行末的\n
 
 			for (let i = 0; i < rows.length; i++) {
 				const img = el.createEl("img") as HTMLImageElement;
 				drawer.draw(rows[i], img, "dark");
 			}
 
-			//drawer.draw(source, img, "dark"); //需要加字符串处理函数先split掉'/n'
-			//drawer.draw("CC(=O)Oc1ccccc1C(=O)O",img,'dark')
-			//console.log(drawer.draw(source, "canvas", "dark"));
+			//smiles合法性检查，不要等console报错
+
 			//source: 需要解析的string
 			//el: 返回的HTMLElement
 			//ctx: 上下文，optional，含有文件名信息啥的
@@ -64,20 +63,22 @@ export default class ChemPlugin extends Plugin {
 		});
 
 		this.registerMarkdownCodeBlockProcessor(
-			"smilesa",
+			"smiles-table",
 			(source, el, ctx) => {
-				const rows = source.split("\n").filter((row) => row.length > 0);
+
+				let drawer = new SmilesDrawer.SmiDrawer();
 
 				const table = el.createEl("table");
 				const body = table.createEl("tbody");
-
+				const rows = source.split("\n").filter((row) => row.length > 0);
+	
 				for (let i = 0; i < rows.length; i++) {
-					const cols = rows[i].split(",");
-
 					const row = body.createEl("tr");
-
+					const cols = rows[i].split(",").filter((row) => row.length > 0)
 					for (let j = 0; j < cols.length; j++) {
-						row.createEl("td", { text: cols[j] });
+						const datagrid = row.createEl("td");
+						const img = datagrid.createEl("img") as HTMLImageElement;
+						drawer.draw(cols[j].trim(), img, "dark");
 					}
 				}
 			}
