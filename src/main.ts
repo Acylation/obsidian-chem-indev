@@ -17,9 +17,8 @@ const DEFAULT_SETTINGS: ChemPluginSettings = {
 };
 
 export default class ChemPlugin extends Plugin {
-
 	settings: ChemPluginSettings;
-	
+
 	async onload() {
 		await this.loadSettings();
 
@@ -37,7 +36,7 @@ export default class ChemPlugin extends Plugin {
 		// If the plugin hooks up any global DOM events (on parts of the app that doesn't belong to this plugin)
 		// Using this function will automatically remove the event listener when this plugin is disabled.
 		this.registerDomEvent(document, "click", (evt: MouseEvent) => {
-			console.log("click", evt);
+			//console.log("click", evt);
 		});
 
 		this.registerView(
@@ -46,36 +45,43 @@ export default class ChemPlugin extends Plugin {
 		);
 
 		this.registerMarkdownCodeBlockProcessor("smiles", (source, el, ctx) => {
-			const img = el.createEl('img') as HTMLImageElement
-			let script = img.createEl('script')
-			script.src = "https://unpkg.com/smiles-drawer@2.1.5/dist/smiles-drawer.min.js"
-			let drawer = new SmilesDrawer.SmiDrawer;//Drawer(options) 导包成功，开始学习调用
-			drawer.draw(source, img, 'dark');
-			console.log("drawed")
+			let drawer = new SmilesDrawer.SmiDrawer(); //Drawer(options) 导包成功，开始学习调用
 
+			const rows = source.split("\n").filter((row) => row.length > 0);//view mode 会读取到行末的\n
+
+			for (let i = 0; i < rows.length; i++) {
+				const img = el.createEl("img") as HTMLImageElement;
+				drawer.draw(rows[i], img, "dark");
+			}
+
+			//drawer.draw(source, img, "dark"); //需要加字符串处理函数先split掉'/n'
+			//drawer.draw("CC(=O)Oc1ccccc1C(=O)O",img,'dark')
+			//console.log(drawer.draw(source, "canvas", "dark"));
 			//source: 需要解析的string
 			//el: 返回的HTMLElement
 			//ctx: 上下文，optional，含有文件名信息啥的
 			//collapse 属性，styling panel，2D editor
-
 		});
 
-		this.registerMarkdownCodeBlockProcessor("smilesa", (source, el, ctx) => {
-			const rows = source.split("\n").filter((row) => row.length > 0);
+		this.registerMarkdownCodeBlockProcessor(
+			"smilesa",
+			(source, el, ctx) => {
+				const rows = source.split("\n").filter((row) => row.length > 0);
 
-			const table = el.createEl("table");
-			const body = table.createEl("tbody");
+				const table = el.createEl("table");
+				const body = table.createEl("tbody");
 
-			for (let i = 0; i < rows.length; i++) {
-				const cols = rows[i].split(",");
+				for (let i = 0; i < rows.length; i++) {
+					const cols = rows[i].split(",");
 
-				const row = body.createEl("tr");
+					const row = body.createEl("tr");
 
-				for (let j = 0; j < cols.length; j++) {
-					row.createEl("td", { text: cols[j] });
+					for (let j = 0; j < cols.length; j++) {
+						row.createEl("td", { text: cols[j] });
+					}
 				}
 			}
-		});
+		);
 	}
 
 	onunload() {
