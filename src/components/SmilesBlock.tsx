@@ -16,7 +16,7 @@ class SmilesBlock extends React.Component {
     super(props);
   }
   render() {
-    <div></div>
+    return <div></div>
   }
 }
 

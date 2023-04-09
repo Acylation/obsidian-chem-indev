@@ -46,6 +46,13 @@ export default class ChemPlugin extends Plugin {
 		);
 
 		this.registerMarkdownCodeBlockProcessor("smiles", (source, el, ctx) => {
+			const img = el.createEl('img') as HTMLImageElement
+			let script = img.createEl('script')
+			script.src = "https://unpkg.com/smiles-drawer@2.1.5/dist/smiles-drawer.min.js"
+			let drawer = new SmilesDrawer.SmiDrawer;//Drawer(options) 导包成功，开始学习调用
+			drawer.draw(source, img, 'dark');
+			console.log("drawed")
+
 			//source: 需要解析的string
 			//el: 返回的HTMLElement
 			//ctx: 上下文，optional，含有文件名信息啥的

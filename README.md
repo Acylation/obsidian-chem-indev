@@ -94,7 +94,11 @@ Obisidian Chem 为Obisidian 提供结构式绘制、渲染等功能，使您能�
 ### 项目任务
 
 - [ ] 帮助文档
-- [x] License: GPLv2 with openbabel depenency
+  - [ ] installation
+  - [ ] usage & demo
+  - [ ] roadmap
+  - [ ] contribution
+- [x] License: GPLv2 with openbabel depenency/MIT
 - [ ] 发布版本，迁移仓库，并重新上传
 - [ ] Github 工作流
 - [ ] Roadmap in Github Project
@@ -107,3 +111,4 @@ Obisidian Chem 为Obisidian 提供结构式绘制、渲染等功能，使您能�
 - obsidian-projects
 - obsidian-admonition
 - smiles-drawer
+-
