@@ -51,7 +51,7 @@ export default class ChemPlugin extends Plugin {
 
 			for (let i = 0; i < rows.length; i++) {
 				const img = el.createEl("img") as HTMLImageElement;
-				drawer.draw(rows[i], img, "dark");
+				drawer.draw(rows[i].trim(), img, "dark");//trim 用于处理行头有空格的情况，行尾的交给上面的filter了
 			}
 
 			//smiles合法性检查，不要等console报错
